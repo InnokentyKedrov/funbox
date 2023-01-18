@@ -1,4 +1,7 @@
-.card {
+.card,
+.card_disabled {
+  cursor: pointer;
+
   position: relative;
 
   overflow: hidden;
@@ -8,18 +11,28 @@
   margin-bottom: 14px;
 }
 
+.card_disabled {
+  cursor: auto;
+}
+
 .card__top {
   display: flex;
   width: 320px;
   height: 45px;
 }
 
-.card__corner {
+.card__corner,
+.card__corner_selected,
+.card__corner_hovered,
+.card__corner_disabled {
   width: 45px;
   height: 100%;
 }
 
-.card__corner::before {
+.card__corner::before,
+.card__corner_selected::before,
+.card__corner_hovered::before,
+.card__corner_disabled::before {
   content: "";
 
   position: absolute;
@@ -30,14 +43,16 @@
   transform: skew(-45deg);
 
   width: 45px;
-  height: 45px;
+  height: 49px;
 
   background-color: #f2f2f2;
-  border-top: 4px solid #1698d9;
   border-left: 5px solid #1698d9;
 }
 
-.card__slogan_wrapper {
+.card__slogan_wrapper,
+.card__slogan_wrapper_selected,
+.card__slogan_wrapper_hovered,
+.card__slogan_wrapper_disabled {
   width: 275px;
   height: 50px;
 
@@ -47,7 +62,10 @@
   border-top-right-radius: 12px;
 }
 
-.card__slogan {
+.card__slogan,
+.card__slogan_selected,
+.card__slogan_hovered,
+.card__slogan_disabled {
   padding-top: 16px;
   padding-left: 8px;
 
@@ -56,7 +74,10 @@
   color: #666;
 }
 
-.card__bottom {
+.card__bottom,
+.card__bottom_selected,
+.card__bottom_hovered,
+.card__bottom_disabled {
   width: 320px;
   height: 436px;
   padding-left: 47px;
@@ -72,14 +93,20 @@
   border-bottom-left-radius: 12px;
 }
 
-.card__title {
+.card__bottom_disabled {
+  background-image: url("../../assets/images/photo_light.png");
+}
+
+.card__title,
+.card__title_disabled {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   color: #000;
 }
 
-.card__taste {
+.card__taste,
+.card__taste_disabled {
   margin-bottom: 15px;
 
   font-size: 24px;
@@ -88,7 +115,8 @@
   color: #000;
 }
 
-.card__description {
+.card__description,
+.card__description_disabled {
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
@@ -96,7 +124,17 @@
   white-space: pre-line;
 }
 
-.card__oval {
+.card__image,
+.card__image_disabled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.card__oval,
+.card__oval_selected,
+.card__oval_hovered,
+.card__oval_disabled {
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -126,14 +164,89 @@
   font-size: 21px;
 }
 
-.card__sign {
+.card__sign,
+.card__sign_disabled {
   font-size: 13px;
   line-height: 15px;
   color: #fff;
   text-align: center;
 }
 
+.card__sign_disabled {
+  color: #ff6;
+}
+
 .card__sign_link {
+  cursor: pointer;
   color: #1698d9;
   border-bottom: 1px dashed #1698d9;
+}
+
+.card:hover .card__corner::before,
+.card:hover .card__slogan_wrapper,
+.card:hover .card__bottom {
+  border-color: #2ea8e6;
+}
+
+.card:hover .card__oval {
+  background-color: #2ea8e6;
+}
+
+.card__sign_link:hover {
+  color: #2ea8e6;
+  border-color: #2ea8e6;
+}
+
+/* -------Selected------- */
+
+.card__corner_selected::before,
+.card__slogan_wrapper_selected,
+.card__bottom_selected {
+  border-color: #d91667;
+}
+
+.card__slogan_selected {
+  color: #d91667;
+}
+
+.card__oval_selected {
+  background-color: #d91667;
+}
+
+/* -------Hovered------- */
+
+.card:hover .card__corner_hovered::before,
+.card:hover .card__slogan_wrapper_hovered,
+.card:hover .card__bottom_hovered {
+  border-color: #e52e7a;
+}
+
+.card__slogan_hovered {
+  color: #e52e7a;
+}
+
+.card:hover .card__oval_hovered {
+  background-color: #e52e7a;
+}
+
+/* -------Disabled------- */
+
+.card__corner_disabled::before,
+.card__slogan_wrapper_disabled,
+.card__bottom_disabled {
+  border-color: #b3b3b3;
+}
+
+.card__oval_disabled {
+  background-color: #b3b3b3;
+}
+
+.card__slogan_disabled,
+.card__title_disabled,
+.card__taste_disabled,
+.card__description_disabled,
+.card__image_disabled {
+  color: #b3b3b3;
+  opacity: 0.5;
+  mix-blend-mode: normal;
 }

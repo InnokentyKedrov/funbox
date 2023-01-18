@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
 
-  width: 1280px;
+  max-width: 1280px;
   height: 680px;
   margin: auto;
 }
@@ -26,10 +26,53 @@
 
 .app__list {
   display: flex;
-  margin: 0 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin: 0 20px;
+
   list-style-type: none;
 }
 
 .app__item {
+  margin-bottom: 20px;
+}
+
+.app__item:not(:last-child) {
   margin-right: 80px;
+}
+
+/* -------Adaptive------- */
+
+@media (max-width: 1160px) {
+  .app {
+    margin: 0 auto;
+  }
+
+  .app__item:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .app__item:nth-child(3) {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 760px) {
+  .app__item:nth-child(n) {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app__item:nth-child(n) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .app__list {
+    margin: 0 auto;
+  }
 }
