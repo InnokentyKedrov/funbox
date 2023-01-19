@@ -3,23 +3,23 @@ import { VariantArrayType } from '../../types/types';
 import styles from './Card.module.css';
 
 function Card(props: VariantArrayType) {
-  const [isSelected, setIsSelected] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isSelected, setIsSelected] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  const onClick = () => {
+  const onClick = (): void => {
     if (!props.outOfStock) {
       setIsSelected(!isSelected);
     }
   };
 
-  const mouseEnter = () => {
+  const mouseEnter = (): void => {
     const current = isSelected;
     if (current) {
       setIsHovered(true);
     }
   };
 
-  const mouseLeave = () => {
+  const mouseLeave = (): void => {
     setIsHovered(false);
   };
 
