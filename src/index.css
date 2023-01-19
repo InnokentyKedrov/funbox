@@ -1,0 +1,59 @@
+@font-face {
+  font-family: TrebuchetMS;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/trebuchetms_regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: TrebuchetMS;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/trebuchetms_bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Exo 2.0";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/Exo2.0-Thin.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font-family: TrebuchetMS, sans-serif;
+
+  background: linear-gradient(
+      180deg,
+      rgb(0 0 0 / 50%) 0%,
+      rgb(0 0 0 / 0.005%) 49.88%,
+      rgb(0 0 0 / 50%) 100%
+    ),
+    url("./assets/images/pattern.png");
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1160px) {
+  body {
+    max-height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(0 0 0 / 0.005%) 49.88%,
+        rgb(0 0 0 / 50%) 100%
+      ),
+      url("./assets/images/pattern@2x.png");
+  }
+}
